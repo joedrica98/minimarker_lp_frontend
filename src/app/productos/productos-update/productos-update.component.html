@@ -1,0 +1,92 @@
+<div class="container-fluid mt-4">
+    <nav class="page-breadcrumb mb-3">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a routerLink="/productos" class="text-decoration-none">Productos</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Editar</li>
+      </ol>
+    </nav>
+  
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="container">
+          <h2 class="my-4">Crear Producto</h2>
+          <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+            <div class="row g-4">
+              <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('nombre')?.invalid && form.get('nombre')?.touched
+                  }"
+                  id="nombre"
+                  formControlName="nombre"
+                />
+                <div class="invalid-feedback">
+                  Por favor, ingrese un nombre válido.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="descripcion" class="form-label">Descripción</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid':
+                      form?.get('descripcion')?.invalid &&
+                      form?.get('descripcion')?.touched
+                  }"
+                  id="descripcion"
+                  formControlName="descripcion"
+                />
+                <div class="invalid-feedback">
+                  Por favor, ingrese una descripcion válida.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="precio" class="form-label">Precio</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('precio')?.invalid && form.get('precio')?.touched
+                  }"
+                  id="precio"
+                  formControlName="precio"
+                />
+                <div class="invalid-feedback">
+                  Por favor, ingrese un precio válido.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="stock" class="form-label">Stock</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  [ngClass]="{
+                    'is-invalid':
+                      form.get('altitud')?.invalid && form.get('stock')?.touched
+                  }"
+                  id="stock"
+                  formControlName="stock"
+                />
+                <div class="invalid-feedback">
+                  Por favor, ingrese una stock válido.
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 d-flex justify-content-center">
+              <button type="submit" class="btn btn-primary btn-lg">
+                Actualizar
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
