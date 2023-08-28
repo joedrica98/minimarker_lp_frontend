@@ -23,4 +23,15 @@ export class ProductosService {
   crearProducto(producto: Producto): Observable<Producto> {
     return this.httpClient.post<any>(this.serverurl + 'productos/', producto);
   }
+
+  updateProducto(productoData: Producto, id: string): Observable<Producto> {
+    return this.httpClient.patch<any>(
+      this.serverurl + productos/${id}/,
+      productoData
+    );
+  }
+
+  destroyProducto(id: string): Observable<Producto> {
+    return this.httpClient.delete<any>(this.serverurl + productos/${id}/);
+  }
 }
