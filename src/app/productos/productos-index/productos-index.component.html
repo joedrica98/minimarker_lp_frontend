@@ -1,0 +1,63 @@
+<div class="container-fluid mt-4">
+  <nav class="page-breadcrumb mb-3">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Productos</li>
+    </ol>
+  </nav>
+  <div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+      <div class="card shadow-sm">
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="card-title">Listado de Productos</h5>
+            <button
+              class="btn btn-primary"
+              routerLink="/inventario/estaciones/create"
+            >
+              Añadir Producto
+            </button>
+          </div>
+
+          <div class="table-responsive pt-3">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>Descripción</th>
+                  <th>Precio</th>
+                  <th>Stock</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let producto of productos">
+                  <td>{{ producto.nombre }}</td>
+                  <td>{{ producto.descripcion }}</td>
+                  <td>{{ producto.precio }}</td>
+                  <td>{{ producto.stock }}</td>
+                  <td class="d-flex justify-content-around">
+                    <button
+                      class="btn btn-success"
+                      routerLink="/inventario/estaciones/{{ producto.id }}"
+                    >
+                      <i-feather name="eye"></i-feather>
+                    </button>
+                    <button
+                      class="btn btn-warning"
+                      routerLink="/inventario/estaciones/{{ producto.id }}/edit"
+                    >
+                      <i-feather name="edit"></i-feather>
+                    </button>
+                    <button class="btn btn-danger">
+                      <i-feather name="trash-2"></i-feather>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
