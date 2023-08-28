@@ -7,7 +7,7 @@ import { Producto } from '../models/producto.entity';
 @Injectable({
   providedIn: 'root',
 })
-export class ProductosService {
+export class ProductoService {
   private serverurl = environment.serverurl;
 
   constructor(private httpClient: HttpClient) {}
@@ -25,13 +25,12 @@ export class ProductosService {
   }
 
   updateProducto(productoData: Producto, id: string): Observable<Producto> {
-    return this.httpClient.patch<any>(
-      this.serverurl + productos/${id}/,
+    return this.httpClient.patch<any>(this.serverurl + `productos/${id}/`,
       productoData
     );
   }
 
   destroyProducto(id: string): Observable<Producto> {
-    return this.httpClient.delete<any>(this.serverurl + productos/${id}/);
+    return this.httpClient.delete<any>(this.serverurl + `productos/${id}/`);
   }
 }

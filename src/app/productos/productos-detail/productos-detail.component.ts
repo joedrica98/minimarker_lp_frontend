@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Producto } from 'src/app/models/producto.entity';
-import { ProductosService } from 'src/app/services/productos.service';
+import { ProductoService } from 'src/app/services/producto.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,7 +13,7 @@ export class ProductosDetailComponent {
   producto: Producto;
 
   constructor(
-    private productoService: ProductosService,
+    private productoService: ProductoService,
     private route: ActivatedRoute
   ) {}
 

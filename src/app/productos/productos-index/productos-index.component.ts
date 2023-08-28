@@ -27,7 +27,7 @@ export class ProductosIndexComponent implements OnInit {
 
   borrarProducto(producto: Producto) {
     Swal.fire({
-      title: 'Â¿Seguro quieres borrar?',
+      title: '¿Seguro quieres borrar?',
       html: `
       <p>Estarias borrando el producto "${producto.nombre}"</p>
     `,

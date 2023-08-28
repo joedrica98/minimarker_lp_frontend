@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Producto } from 'src/app/models/producto.entity';
-import { ProductosService } from 'src/app/services/productos.service';
+import { ProductoService } from 'src/app/services/producto.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -15,7 +15,7 @@ export class ProductosCreateComponent {
 
   constructor(
     private fb: FormBuilder,
-    private productosService: ProductosService,
+    private productoService: ProductoService,
     private router: Router
   ) {
     this.form = this.fb.group({
@@ -27,7 +27,7 @@ export class ProductosCreateComponent {
   }
 
   crearProducto(producto: Producto) {
-    this.productosService.crearProducto(producto).subscribe({
+    this.productoService.crearProducto(producto).subscribe({
       next: (data) => {
         Swal.fire(
           'Producto creado',

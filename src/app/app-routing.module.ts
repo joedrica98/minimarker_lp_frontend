@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductosIndexComponent } from './productos/productos-index/productos-index.component';
 import { ProductosCreateComponent } from './productos/productos-create/productos-create.component';
 import { ProductosDetailComponent } from './productos/productos-detail/productos-detail.component';
+import { ProductosUpdateComponent } from './productos/productos-update/productos-update.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,10 @@ const routes: Routes = [
       {
         path: ':id',
         component: ProductosDetailComponent,
+      },
+      {
+        path: ':id/update',
+        component: ProductosUpdateComponent,
       },
     ],
   },
