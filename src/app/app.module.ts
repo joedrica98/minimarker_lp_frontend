@@ -10,12 +10,14 @@ import { Edit, Eye, Trash2 } from 'angular-feather/icons';
 import { ProductosCreateComponent } from './productos/productos-create/productos-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { ProductosDetailComponent } from './productos/productos-detail/productos-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductosIndexComponent,
     ProductosCreateComponent,
+    ProductosDetailComponent,
   ],
   imports: [
     BrowserModule,

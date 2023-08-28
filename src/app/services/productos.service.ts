@@ -16,6 +16,10 @@ export class ProductosService {
     return this.httpClient.get<any>(this.serverurl + 'productos/');
   }
 
+  getProductoById(id: string): Observable<Producto> {
+    return this.httpClient.get<any>(this.serverurl + `productos/${id}/`);
+  }
+
   crearProducto(producto: Producto): Observable<Producto> {
     return this.httpClient.post<any>(this.serverurl + 'productos/', producto);
   }
