@@ -16,7 +16,7 @@ export class ProductosService {
     return this.httpClient.get<any>(this.serverurl + 'productos/');
   }
 
-  createEstacion(producto: Producto): Observable<Producto> {
+  crearProducto(producto: Producto): Observable<Producto> {
     return this.httpClient.post<any>(this.serverurl + 'productos/', producto);
   }
 }

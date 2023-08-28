@@ -1,93 +1,92 @@
-<nav class="page-breadcrumb mb-3">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item">
-      <a routerLink="/inventario/estaciones" class="text-decoration-none"
-        >Estaciones</a
-      >
-    </li>
-    <li class="breadcrumb-item active" aria-current="page">Crear</li>
-  </ol>
-</nav>
+<div class="container-fluid mt-4">
+  <nav class="page-breadcrumb mb-3">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a routerLink="/productos" class="text-decoration-none"
+          >Productos</a
+        >
+      </li>
+      <li class="breadcrumb-item active" aria-current="page">Crear</li>
+    </ol>
+  </nav>
 
-<div class="card shadow-sm">
-  <!-- Added shadow for depth -->
-  <div class="card-body">
-    <div class="container">
-      <h2 class="my-4">Crear Estación</h2>
-      <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
-        <div class="row g-4">
-          <!-- Increased gutter for better spacing -->
-          <div class="col-md-6">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input
-              type="text"
-              class="form-control"
-              [ngClass]="{
-                'is-invalid':
-                  form.get('nombre')?.invalid && form.get('nombre')?.touched
-              }"
-              id="nombre"
-              formControlName="nombre"
-            />
-            <div class="invalid-feedback">
-              Por favor, ingrese un nombre válido.
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <div class="container">
+        <h2 class="my-4">Crear Producto</h2>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('nombre')?.invalid && form.get('nombre')?.touched
+                }"
+                id="nombre"
+                formControlName="nombre"
+              />
+              <div class="invalid-feedback">
+                Por favor, ingrese un nombre válido.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="descripcion" class="form-label">Descripción</label>
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid':
+                    form?.get('descripcion')?.invalid &&
+                    form?.get('descripcion')?.touched
+                }"
+                id="descripcion"
+                formControlName="descripcion"
+              />
+              <div class="invalid-feedback">
+                Por favor, ingrese una descripcion válida.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="precio" class="form-label">Precio</label>
+              <input
+                type="number"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('precio')?.invalid && form.get('precio')?.touched
+                }"
+                id="precio"
+                formControlName="precio"
+              />
+              <div class="invalid-feedback">
+                Por favor, ingrese un precio válido.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="stock" class="form-label">Stock</label>
+              <input
+                type="number"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('altitud')?.invalid && form.get('stock')?.touched
+                }"
+                id="stock"
+                formControlName="stock"
+              />
+              <div class="invalid-feedback">
+                Por favor, ingrese una stock válido.
+              </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <label for="latitud" class="form-label">Latitud</label>
-            <input
-              type="number"
-              class="form-control"
-              [ngClass]="{
-                'is-invalid':
-                  form?.get('latitud')?.invalid && form?.get('latitud')?.touched
-              }"
-              id="latitud"
-              formControlName="latitud"
-            />
-            <div class="invalid-feedback">
-              Por favor, ingrese una latitud válida.
-            </div>
+          <div class="mt-4 d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary btn-lg">Crear</button>
           </div>
-          <div class="col-md-6">
-            <label for="longitud" class="form-label">Longitud</label>
-            <input
-              type="number"
-              class="form-control"
-              [ngClass]="{
-                'is-invalid':
-                  form.get('longitud')?.invalid && form.get('longitud')?.touched
-              }"
-              id="longitud"
-              formControlName="longitud"
-            />
-            <div class="invalid-feedback">
-              Por favor, ingrese una longitud válida.
-            </div>
-          </div>
-          <div class="col-md-6">
-            <label for="altitud" class="form-label">Altitud</label>
-            <input
-              type="number"
-              class="form-control"
-              [ngClass]="{
-                'is-invalid':
-                  form.get('altitud')?.invalid && form.get('altitud')?.touched
-              }"
-              id="altitud"
-              formControlName="altitud"
-            />
-            <div class="invalid-feedback">
-              Por favor, ingrese una altitud válida.
-            </div>
-          </div>
-        </div>
-        <div class="mt-4 d-flex justify-content-center">
-          <!-- Centered the button -->
-          <button type="submit" class="btn btn-primary btn-lg">Crear</button>
-          <!-- Made the button larger -->
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   </div>
 </div>

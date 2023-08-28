@@ -9,6 +9,7 @@ import { FeatherModule } from 'angular-feather';
 import { Edit, Eye, Trash2 } from 'angular-feather/icons';
 import { ProductosCreateComponent } from './productos/productos-create/productos-create.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FeatherModule.pick({ Eye, Edit, Trash2 }),
     ReactiveFormsModule,
     FormsModule,
+    SweetAlert2Module.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],
