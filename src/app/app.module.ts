@@ -11,6 +11,7 @@ import { ProductosCreateComponent } from './productos/productos-create/productos
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ProductosDetailComponent } from './productos/productos-detail/productos-detail.component';
+import { ProductosUpdateComponent } from './productos/productos-update/productos-update.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ProductosDetailComponent } from './productos/productos-detail/productos
     ProductosIndexComponent,
     ProductosCreateComponent,
     ProductosDetailComponent,
+    ProductosUpdateComponent,
   ],
   imports: [
     BrowserModule,
