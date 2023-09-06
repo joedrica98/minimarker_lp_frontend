@@ -39,4 +39,13 @@ export class ProductoService {
   getCarrito(): Observable<Carrito> {
     return this.httpClient.get<any>(this.serverurl + `ver_carrito/`);
   }
+
+  finalizarCompra(): Observable<Carrito> {
+    return this.httpClient.post<any>(this.serverurl + `finalizar_compra/`, {});
+  }
+
+  addCarrito(productoId: string, cantidad: number) {
+    const body = { producto_id: productoId, cantidad };
+    return this.httpClient.post(this.serverurl + 'agregar_a_carrito/', body);
+  }
 }

@@ -4,7 +4,7 @@
     <div class="col" *ngFor="let product of productos">
       <div class="card">
         <div class="ratio ratio-4x3">
-            <img
+          <img
             [src]="product.image_url"
             class="card-img-top product-img"
             alt="{{ product.nombre }}"
@@ -20,6 +20,7 @@
           <form>
             <div class="mb-3">
               <input
+                #quantityInput
                 type="number"
                 class="form-control form-control-sm"
                 id="quantity"
@@ -28,7 +29,10 @@
                 placeholder="Cantidad"
               />
             </div>
-            <button type="submit" class="btn btn-primary btn-sm">
+            <button
+              (click)="agregarCarrito(product, +quantityInput.value)"
+              class="btn btn-primary btn-sm"
+            >
               Añadir al Carrito
             </button>
           </form>

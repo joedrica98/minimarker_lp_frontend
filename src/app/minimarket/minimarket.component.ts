@@ -35,17 +35,6 @@ export class MinimarketComponent implements OnInit {
       showCancelButton: true,
       confirmButtonText: 'Si',
       cancelButtonText: 'No',
-      // preConfirm: () => {
-      //   const selectElement = document.getElementById(
-      //     "selectElement"
-      //   ) as HTMLSelectElement;
-      //   const selectedValue = selectElement.value;
-      //   if (!selectedValue) {
-      //     Swal.showValidationMessage("Por favor selecciona un valor");
-      //     return false;
-      //   }
-      //   return selectedValue;
-      // },
     }).then((result) => {
       if (result.isConfirmed) {
         this.productoService.destroyProducto(producto.id).subscribe({
@@ -61,5 +50,35 @@ export class MinimarketComponent implements OnInit {
         });
       }
     });
+  }
+
+  agregarCarrito(producto: Producto, cantidad: number) {
+    if (cantidad < 1 || cantidad > producto.stock) {
+      Swal.fire({
+        title: 'Cantidad no válida',
+        text: `La cantidad debe estar entre 1 y ${producto.stock}`,
+        icon: 'error',
+      });
+      return;
+    }
+
+    this.productoService.addCarrito(producto.id, cantidad).subscribe(
+      (response: any) => {
+        Swal.fire({
+          title: `${producto.nombre}`,
+          text: `${response.message}`,
+          icon: 'success',
+        });
+        // Optionally, refresh the products to get updated stock numbers
+        this.cargarProductos();
+      },
+      (error) => {
+        Swal.fire({
+          title: 'Error',
+          text: 'No se pudo añadir el producto al carrito.',
+          icon: 'error',
+        });
+      }
+    );
   }
 }
