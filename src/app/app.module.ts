@@ -12,6 +12,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 import { ProductosDetailComponent } from './productos/productos-detail/productos-detail.component';
 import { ProductosUpdateComponent } from './productos/productos-update/productos-update.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MinimarketComponent } from './minimarket/minimarket.component';
+import { CarritoComponent } from './carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { ProductosUpdateComponent } from './productos/productos-update/productos
     ProductosCreateComponent,
     ProductosDetailComponent,
     ProductosUpdateComponent,
+    NavbarComponent,
+    MinimarketComponent,
+    CarritoComponent,
   ],
   imports: [
     BrowserModule,

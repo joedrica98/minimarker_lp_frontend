@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Producto } from '../models/producto.entity';
+import { Carrito } from '../models/carrito.entity';
 
 @Injectable({
   providedIn: 'root',
@@ -25,12 +26,17 @@ export class ProductoService {
   }
 
   updateProducto(productoData: Producto, id: string): Observable<Producto> {
-    return this.httpClient.patch<any>(this.serverurl + `productos/${id}/`,
+    return this.httpClient.patch<any>(
+      this.serverurl + `productos/${id}/`,
       productoData
     );
   }
 
   destroyProducto(id: string): Observable<Producto> {
     return this.httpClient.delete<any>(this.serverurl + `productos/${id}/`);
+  }
+
+  getCarrito(): Observable<Carrito> {
+    return this.httpClient.get<any>(this.serverurl + `ver_carrito/`);
   }
 }

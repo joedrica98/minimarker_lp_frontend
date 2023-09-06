@@ -4,4 +4,5 @@ export class Producto {
   descripcion: string;
   precio: string;
   stock: number;
+  image_url: number;
 }

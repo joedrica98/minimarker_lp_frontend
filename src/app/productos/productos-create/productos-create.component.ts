@@ -23,6 +23,7 @@ export class ProductosCreateComponent {
       descripcion: [null, [Validators.required, Validators.maxLength(255)]],
       precio: [null, [Validators.required]],
       stock: [null, [Validators.required]],
+      image_url: [null, [Validators.required]],
     });
   }
 

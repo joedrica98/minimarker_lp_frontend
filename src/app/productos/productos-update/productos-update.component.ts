@@ -25,6 +25,7 @@ export class ProductosUpdateComponent {
       descripcion: [null, [Validators.required, Validators.maxLength(255)]],
       precio: [null, [Validators.required]],
       stock: [null, [Validators.required]],
+      image_url: [null, [Validators.required]],
     });
   }
 
@@ -38,7 +39,7 @@ export class ProductosUpdateComponent {
     if (!id) {
       Swal.fire(
         'No se encontro',
-        'No se encontro estación con ese Id',
+        'No se encontro producto con ese Id',
         'error'
       );
       return; // exit the function early if no ID found
@@ -52,11 +53,12 @@ export class ProductosUpdateComponent {
           descripcion: this.producto.descripcion,
           precio: this.producto.precio,
           stock: this.producto.stock,
+          image_url: this.producto.image_url,
         });
       },
       error: (error) => {
         // Handle any error that might occur when fetching the data
-        Swal.fire('Error', 'Error obteniendo Estación.', 'error');
+        Swal.fire('Error', 'Error obteniendo Producto.', 'error');
       },
     });
   }

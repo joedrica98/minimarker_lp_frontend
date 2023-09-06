@@ -79,6 +79,23 @@
                 Por favor, ingrese una stock válido.
               </div>
             </div>
+            <div class="col-md-12">
+              <label for="image_url" class="form-label">Url Imagen</label>
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="{
+                  'is-invalid':
+                    form.get('image_url')?.invalid &&
+                    form.get('image_url')?.touched
+                }"
+                id="image_url"
+                formControlName="image_url"
+              />
+              <div class="invalid-feedback">
+                Por favor, ingrese una url válida.
+              </div>
+            </div>
           </div>
           <div class="mt-4 d-flex justify-content-center">
             <button type="submit" class="btn btn-primary btn-lg">Crear</button>
